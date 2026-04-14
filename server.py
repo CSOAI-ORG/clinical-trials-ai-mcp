@@ -1,49 +1,18 @@
 #!/usr/bin/env python3
-"""Clinical trial governance. — MEOK AI Labs."""
-import json, os, hashlib, random
-from datetime import datetime, timezone, timedelta
-from collections import defaultdict
+import json
 from mcp.server.fastmcp import FastMCP
-
-_usage = defaultdict(list)
-def _rl(c="anon"):
-    now = datetime.now(timezone.utc)
-    _usage[c] = [t for t in _usage[c] if (now-t).total_seconds() < 86400]
-    if len(_usage[c]) >= 15: return json.dumps({"error": "Limit 15/day"})
-    _usage[c].append(now); return None
-
-mcp = FastMCP("clinical-trials-ai", instructions="MEOK AI Labs — Clinical trial governance.")
-_store = []
-
-@mcp.tool()
-def check_protocol(trial_id: str, step: str, data: str) -> str:
-    """Clinical trial governance."""
-    if err := _rl(): return err
-    ts = datetime.now(timezone.utc).isoformat()
-    entry = {"id": hashlib.sha256(f"{ts}{str(locals())}".encode()).hexdigest()[:12], "timestamp": ts}
-    for k, v in locals().items():
-        if k not in ("err", "ts", "entry"): entry[k] = v
-    _store.append(entry)
-    return json.dumps(entry, indent=2)
-
-@mcp.tool()
-def report_adverse_event(trial_id: str, event: str, severity: str = 'mild') -> str:
-    """Process and verify."""
-    if err := _rl(): return err
-    result = {"timestamp": datetime.now(timezone.utc).isoformat(), "status": "processed"}
-    for k, v in locals().items():
-        if k not in ("err", "result"): result[k] = v
-    return json.dumps(result, indent=2)
-
-@mcp.tool()
-def get_trial_audit() -> str:
-    """Get stored entries."""
-    return json.dumps({"entries": _store[-20:], "total": len(_store)}, indent=2)
-
-@mcp.tool()
-def get_stats() -> str:
-    """Usage stats."""
-    return json.dumps({"total": len(_store), "timestamp": datetime.now(timezone.utc).isoformat()}, indent=2)
-
+mcp = FastMCP("clinical-trials-ai-mcp")
+TRIALS = [
+    {"id": "NCT001", "condition": "diabetes", "phase": "Phase II", "location": "London"},
+    {"id": "NCT002", "condition": "hypertension", "phase": "Phase III", "location": "Manchester"},
+]
+@mcp.tool(name="search_trials")
+async def search_trials(condition: str, phase: str = "") -> str:
+    matches = [t for t in TRIALS if condition.lower() in t["condition"] and (phase == "" or phase.lower() in t["phase"].lower())]
+    return json.dumps({"condition": condition, "matches": matches})
+@mcp.tool(name="eligibility_check")
+async def eligibility_check(age: int, conditions: list) -> str:
+    eligible = age >= 18 and len(conditions) <= 3
+    return json.dumps({"eligible": eligible, "reason": "Age and comorbidity criteria met" if eligible else "Exclusion criteria may apply"})
 if __name__ == "__main__":
     mcp.run()
