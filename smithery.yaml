@@ -1,3 +1,22 @@
 name: clinical-trials-ai-mcp
-description: MEOK AI Labs - Uclinical trials ai
+description: MEOK AI Labs - AI Governance & Compliance
 version: 1.0.0
+tools:
+- name: search_trials
+  description: ''
+  parameters:
+  - name: condition
+    type: string
+    required: true
+  - name: phase
+    type: string
+    required: false
+- name: eligibility_check
+  description: ''
+  parameters:
+  - name: age
+    type: integer
+    required: true
+  - name: conditions
+    type: array
+    required: true

@@ -1,6 +1,44 @@
 {
   "name": "clinical-trials-ai-mcp",
-  "description": "MEOK AI Labs Uclinical trials ai",
+  "description": "MEOK AI Labs - AI Governance & Compliance",
   "version": "1.0.0",
-  "author": "MEOK AI Labs"
+  "tools": [
+    {
+      "name": "search_trials",
+      "description": "",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "condition": {
+            "type": "string"
+          },
+          "phase": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "condition"
+        ]
+      }
+    },
+    {
+      "name": "eligibility_check",
+      "description": "",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "age": {
+            "type": "integer"
+          },
+          "conditions": {
+            "type": "array"
+          }
+        },
+        "required": [
+          "age",
+          "conditions"
+        ]
+      }
+    }
+  ]
 }
