@@ -1,0 +1,58 @@
+{
+  "name": "clinical-trials-ai",
+  "description": "Search clinical trials, evaluate eligibility, compare trials, and retrieve endpoint data. Uses a reference database for demonstration purposes.",
+  "version": "1.0.0",
+  "protocol_version": "2025-11-25",
+  "publisher": {
+    "name": "MEOK AI Labs",
+    "url": "https://meok.ai",
+    "email": "nicholas@meok.ai"
+  },
+  "repository": "https://github.com/CSOAI-ORG/clinical-trials-ai-mcp",
+  "license": "MIT",
+  "transport": [
+    "stdio",
+    "streamable-http"
+  ],
+  "authentication": {
+    "type": "api-key",
+    "free_tier": true,
+    "free_limit": "15 calls/day"
+  },
+  "tools": [
+    {
+      "name": "search_trials",
+      "description": "Search clinical trials by condition, drug, phase, status, or location."
+    },
+    {
+      "name": "check_eligibility",
+      "description": "Evaluate whether a patient meets eligibility criteria for a specific trial. Conditions as comma-separated string."
+    },
+    {
+      "name": "get_trial_details",
+      "description": "Get comprehensive details for a specific clinical trial."
+    },
+    {
+      "name": "compare_trials",
+      "description": "Compare multiple clinical trials side by side. Pass trial IDs as comma-separated string."
+    },
+    {
+      "name": "get_trial_endpoints",
+      "description": "Get detailed primary and secondary endpoint information for a trial."
+    }
+  ],
+  "categories": [
+    "AI & Machine Learning",
+    "Data & Analytics",
+    "Developer Tools"
+  ],
+  "pricing": {
+    "free": {
+      "calls_per_day": 15
+    },
+    "pro": {
+      "price": "$29/month",
+      "url": "https://meok.ai/pricing"
+    }
+  }
+}
