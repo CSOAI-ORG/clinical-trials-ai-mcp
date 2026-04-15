@@ -1,0 +1,10 @@
+{
+  "name": "clinical-trials-ai-mcp",
+  "description": "MEOK AI Labs \u2014 clinical-trials-ai-mcp",
+  "vendor": "MEOK AI Labs",
+  "homepage": "https://meok.ai",
+  "repository": "https://github.com/CSOAI-ORG/clinical-trials-ai-mcp",
+  "license": "MIT",
+  "runtime": "python",
+  "entryPoint": "mcp-wrapper.py"
+}
