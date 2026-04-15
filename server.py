@@ -91,11 +91,11 @@ TRIALS_DB = [
     },
 ]
 
-mcp = FastMCP("clinical-trials-ai-mcp", instructions="Search clinical trials, evaluate eligibility, compare trials, and retrieve endpoint data. Uses a reference database for demonstration purposes.")
+mcp = FastMCP("clinical-trials-ai", instructions="Search clinical trials, evaluate eligibility, compare trials, and retrieve endpoint data. Uses a reference database for demonstration purposes.")
 
 
 @mcp.tool()
-async def search_trials(condition: str = "", drug: str = "", phase: str = "", status: str = "", location: str = "", api_key: str = "") -> str:
+def search_trials(condition: str = "", drug: str = "", phase: str = "", status: str = "", location: str = "", api_key: str = "") -> str:
     """Search clinical trials by condition, drug, phase, status, or location."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -141,7 +141,7 @@ async def search_trials(condition: str = "", drug: str = "", phase: str = "", st
 
 
 @mcp.tool()
-async def check_eligibility(trial_id: str, patient_age: int, patient_gender: str = "any", conditions: str = "", api_key: str = "") -> str:
+def check_eligibility(trial_id: str, patient_age: int, patient_gender: str = "any", conditions: str = "", api_key: str = "") -> str:
     """Evaluate whether a patient meets eligibility criteria for a specific trial. Conditions as comma-separated string."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -217,7 +217,7 @@ async def check_eligibility(trial_id: str, patient_age: int, patient_gender: str
 
 
 @mcp.tool()
-async def get_trial_details(trial_id: str, api_key: str = "") -> str:
+def get_trial_details(trial_id: str, api_key: str = "") -> str:
     """Get comprehensive details for a specific clinical trial."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -260,7 +260,7 @@ async def get_trial_details(trial_id: str, api_key: str = "") -> str:
 
 
 @mcp.tool()
-async def compare_trials(trial_ids: str, api_key: str = "") -> str:
+def compare_trials(trial_ids: str, api_key: str = "") -> str:
     """Compare multiple clinical trials side by side. Pass trial IDs as comma-separated string."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:
@@ -326,7 +326,7 @@ async def compare_trials(trial_ids: str, api_key: str = "") -> str:
 
 
 @mcp.tool()
-async def get_trial_endpoints(trial_id: str, api_key: str = "") -> str:
+def get_trial_endpoints(trial_id: str, api_key: str = "") -> str:
     """Get detailed primary and secondary endpoint information for a trial."""
     allowed, msg, tier = check_access(api_key)
     if not allowed:

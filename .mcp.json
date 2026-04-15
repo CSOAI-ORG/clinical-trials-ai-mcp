@@ -1,42 +1,100 @@
 {
   "name": "clinical-trials-ai-mcp",
-  "description": "MEOK AI Labs - AI Governance & Compliance",
+  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Search clinical trials, evaluate eligibility, compare trials, and retrieve endpoint data. Uses a ref",
   "version": "1.0.0",
   "tools": [
     {
       "name": "search_trials",
-      "description": "",
+      "description": "Search clinical trials by condition, drug, phase, status, or location.",
       "parameters": {
         "type": "object",
         "properties": {
           "condition": {
             "type": "string"
           },
+          "drug": {
+            "type": "string"
+          },
           "phase": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "location": {
+            "type": "string"
+          }
+        },
+        "required": []
+      }
+    },
+    {
+      "name": "check_eligibility",
+      "description": "Evaluate whether a patient meets eligibility criteria for a specific trial. Conditions as comma-separated string.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "trial_id": {
+            "type": "string"
+          },
+          "patient_age": {
+            "type": "integer"
+          },
+          "patient_gender": {
+            "type": "string"
+          },
+          "conditions": {
             "type": "string"
           }
         },
         "required": [
-          "condition"
+          "trial_id",
+          "patient_age"
         ]
       }
     },
     {
-      "name": "eligibility_check",
-      "description": "",
+      "name": "get_trial_details",
+      "description": "Get comprehensive details for a specific clinical trial.",
       "parameters": {
         "type": "object",
         "properties": {
-          "age": {
-            "type": "integer"
-          },
-          "conditions": {
-            "type": "array"
+          "trial_id": {
+            "type": "string"
           }
         },
         "required": [
-          "age",
-          "conditions"
+          "trial_id"
+        ]
+      }
+    },
+    {
+      "name": "compare_trials",
+      "description": "Compare multiple clinical trials side by side. Pass trial IDs as comma-separated string.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "trial_ids": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "trial_ids"
+        ]
+      }
+    },
+    {
+      "name": "get_trial_endpoints",
+      "description": "Get detailed primary and secondary endpoint information for a trial.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "trial_id": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "trial_id"
         ]
       }
     }
