@@ -1,6 +1,6 @@
 {
   "name": "clinical-trials-ai-mcp",
-  "description": "> **By [MEOK AI Labs](https://meok.ai)** \u2014 Search clinical trials, evaluate eligibility, compare trials, and retrieve endpoint data. Uses a ref",
+  "description": "MCP server for clinical trials ai. Features search trials, check eligibility, get trial details. From MEOK AI Labs.",
   "version": "1.0.0",
   "tools": [
     {
