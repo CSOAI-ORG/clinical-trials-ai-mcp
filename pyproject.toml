@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
 name = "clinical-trials-ai-mcp"
-version = "1.0.3"
+version = "1.0.4"
 readme = "README.md"
 description = "MCP server for clinical trials ai. Features search trials, check eligibility, get trial details. From MEOK AI Labs."
 license = {file = "LICENSE"}
