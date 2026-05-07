@@ -96,7 +96,23 @@ mcp = FastMCP("clinical-trials-ai", instructions="Search clinical trials, evalua
 
 @mcp.tool()
 def search_trials(condition: str = "", drug: str = "", phase: str = "", status: str = "", location: str = "", api_key: str = "") -> str:
-    """Search clinical trials by condition, drug, phase, status, or location."""
+    """Search clinical trials by condition, drug, phase, status, or location.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -142,7 +158,23 @@ def search_trials(condition: str = "", drug: str = "", phase: str = "", status: 
 
 @mcp.tool()
 def check_eligibility(trial_id: str, patient_age: int, patient_gender: str = "any", conditions: str = "", api_key: str = "") -> str:
-    """Evaluate whether a patient meets eligibility criteria for a specific trial. Conditions as comma-separated string."""
+    """Evaluate whether a patient meets eligibility criteria for a specific trial. Conditions as comma-separated string.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -218,7 +250,23 @@ def check_eligibility(trial_id: str, patient_age: int, patient_gender: str = "an
 
 @mcp.tool()
 def get_trial_details(trial_id: str, api_key: str = "") -> str:
-    """Get comprehensive details for a specific clinical trial."""
+    """Get comprehensive details for a specific clinical trial.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -261,7 +309,23 @@ def get_trial_details(trial_id: str, api_key: str = "") -> str:
 
 @mcp.tool()
 def compare_trials(trial_ids: str, api_key: str = "") -> str:
-    """Compare multiple clinical trials side by side. Pass trial IDs as comma-separated string."""
+    """Compare multiple clinical trials side by side. Pass trial IDs as comma-separated string.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
@@ -327,7 +391,23 @@ def compare_trials(trial_ids: str, api_key: str = "") -> str:
 
 @mcp.tool()
 def get_trial_endpoints(trial_id: str, api_key: str = "") -> str:
-    """Get detailed primary and secondary endpoint information for a trial."""
+    """Get detailed primary and secondary endpoint information for a trial.
+
+    Behavior:
+        This tool is read-only and stateless — it produces analysis output
+        without modifying any external systems, databases, or files.
+        Safe to call repeatedly with identical inputs (idempotent).
+        Free tier: 10/day rate limit. Pro tier: unlimited.
+        No authentication required for basic usage.
+
+    When to use:
+        Use this tool when you need structured analysis or classification
+        of inputs against established frameworks or standards.
+
+    When NOT to use:
+        Not suitable for real-time production decision-making without
+        human review of results.
+    """
     allowed, msg, tier = check_access(api_key)
     if not allowed:
         return json.dumps({"error": msg, "upgrade_url": "https://meok.ai/pricing"})
