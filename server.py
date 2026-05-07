@@ -112,6 +112,15 @@ def search_trials(condition: str = "", drug: str = "", phase: str = "", status: 
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        condition (str): The condition to analyze or process.
+        drug (str): The drug to analyze or process.
+        phase (str): The phase to analyze or process.
+        status (str): The status to analyze or process.
+        location (str): The location to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -188,6 +197,14 @@ def check_eligibility(trial_id: str, patient_age: int, patient_gender: str = "an
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        trial_id (str): The trial id to analyze or process.
+        patient_age (int): The patient age to analyze or process.
+        patient_gender (str): The patient gender to analyze or process.
+        conditions (str): The conditions to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -294,6 +311,11 @@ def get_trial_details(trial_id: str, api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        trial_id (str): The trial id to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -367,6 +389,11 @@ def compare_trials(trial_ids: str, api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        trial_ids (str): The trial ids to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
@@ -463,6 +490,11 @@ def get_trial_endpoints(trial_id: str, api_key: str = "") -> str:
     When NOT to use:
         Not suitable for real-time production decision-making without
         human review of results.
+
+    Args:
+        trial_id (str): The trial id to analyze or process.
+        api_key (str): The api key to analyze or process.
+
     Behavioral Transparency:
         - Side Effects: This tool is read-only and produces no side effects. It does not modify
           any external state, databases, or files. All output is computed in-memory and returned
