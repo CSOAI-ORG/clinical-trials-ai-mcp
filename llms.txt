@@ -1,0 +1,32 @@
+# Clinical Trials Ai MCP
+
+> Search clinical trials, evaluate eligibility, compare trials, and retrieve endpoint data
+
+`clinical-trials-ai-mcp` is a Model Context Protocol (MCP) server by MEOK AI Labs.
+
+## Install
+
+```bash
+pip install clinical-trials-ai-mcp
+```
+
+Or run without installing:
+
+```bash
+uvx clinical-trials-ai-mcp
+```
+
+## Tools
+
+- `search_trials` — Search clinical trials by condition, drug, phase, status, or location.
+- `check_eligibility` — Evaluate whether a patient meets eligibility criteria for a specific trial. Conditions as comma-separated string.
+- `get_trial_details` — Get comprehensive details for a specific clinical trial.
+- `compare_trials` — Compare multiple clinical trials side by side. Pass trial IDs as comma-separated string.
+- `get_trial_endpoints` — Get detailed primary and secondary endpoint information for a trial.
+
+## Links
+
+- Source: https://github.com/CSOAI-ORG/clinical-trials-ai-mcp
+- PyPI: https://pypi.org/project/clinical-trials-ai-mcp/
+- MEOK AI Labs: https://meok.ai
+- Council of AI: https://councilof.ai
