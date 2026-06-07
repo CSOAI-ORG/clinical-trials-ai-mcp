@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 """
-Buy Pro: https://www.csoai.org/checkout
 Clinical Trials AI MCP Server - Search, compare, and evaluate clinical trials."""
 
 import sys, os

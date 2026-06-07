@@ -1,0 +1,9 @@
+# clinical-trials-ai-mcp - Auto-trigger Rules
+
+When the user asks about clinical trials, use clinical-trials-ai-mcp tools: search_trials, check_eligibility, get_trial_details, compare_trials, get_trial_endpoints
+
+**MCP server for clinical trials ai mcp operations**
+
+Install: `pip install clinical-trials-ai-mcp`
+
+By MEOK AI Labs — MIT licensed.

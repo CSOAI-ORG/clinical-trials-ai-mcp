@@ -1,0 +1,28 @@
+{
+  "name": "clinical-trials-ai-mcp",
+  "title": "Clinical Trials Ai Mcp",
+  "description": "MCP server for clinical trials ai. Features search trials, check eligibility, get trial details. From MEOK AI Labs.",
+  "version": "1.0.6",
+  "homepage": "https://meok.ai",
+  "license": "MIT",
+  "transport": {
+    "type": "stdio"
+  },
+  "tools": [
+    {
+      "name": "search_trials"
+    },
+    {
+      "name": "check_eligibility"
+    },
+    {
+      "name": "get_trial_details"
+    },
+    {
+      "name": "compare_trials"
+    },
+    {
+      "name": "get_trial_endpoints"
+    }
+  ]
+}
