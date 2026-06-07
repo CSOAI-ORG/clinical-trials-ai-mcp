@@ -1,0 +1,23 @@
+{
+  "acpVersion": "0.1",
+  "agent": {
+    "name": "clinical-trials-ai-mcp",
+    "description": "Clinical Trials Ai MCP Server by MEOK AI Labs",
+    "version": "1.0.6",
+    "provider": "MEOK AI Labs",
+    "interfaces": [
+      {
+        "type": "mcp",
+        "transport": "stdio",
+        "package": "clinical-trials-ai-mcp"
+      }
+    ],
+    "capabilities": [
+      "search_trials",
+      "check_eligibility",
+      "get_trial_details",
+      "compare_trials",
+      "get_trial_endpoints"
+    ]
+  }
+}

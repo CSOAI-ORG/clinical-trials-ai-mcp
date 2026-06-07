@@ -1,0 +1,68 @@
+{
+  "name": "clinical-trials-ai-mcp",
+  "description": "Clinical Trials Ai MCP Server by MEOK AI Labs",
+  "url": "https://proofof.ai/scorecard/clinical-trials-ai-mcp.html",
+  "version": "1.0.6",
+  "protocolVersion": "0.2.0",
+  "provider": {
+    "organization": "MEOK AI Labs",
+    "url": "https://meok.ai"
+  },
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false
+  },
+  "defaultInputModes": [
+    "text"
+  ],
+  "defaultOutputModes": [
+    "text"
+  ],
+  "skills": [
+    {
+      "id": "search_trials",
+      "name": "Search Trials",
+      "description": "search_trials via clinical-trials-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "check_eligibility",
+      "name": "Check Eligibility",
+      "description": "check_eligibility via clinical-trials-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_trial_details",
+      "name": "Get Trial Details",
+      "description": "get_trial_details via clinical-trials-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "compare_trials",
+      "name": "Compare Trials",
+      "description": "compare_trials via clinical-trials-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    },
+    {
+      "id": "get_trial_endpoints",
+      "name": "Get Trial Endpoints",
+      "description": "get_trial_endpoints via clinical-trials-ai-mcp",
+      "tags": [
+        "mcp",
+        "compliance"
+      ]
+    }
+  ]
+}
