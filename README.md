@@ -113,3 +113,28 @@ Free tier: 10 calls/day per MCP. Pro tier (£79/mo): unlimited + cryptographical
 
 <!-- BUY-LADDER:END -->
 
+
+
+## Configuration
+
+Add to your `claude_desktop_config.json` (Claude Desktop) or your MCP client config:
+
+```json
+{
+  "mcpServers": {
+    "clinical-trials-ai-mcp": {
+      "command": "uvx",
+      "args": ["clinical-trials-ai-mcp"]
+    }
+  }
+}
+```
+
+Or: `pip install clinical-trials-ai-mcp` then run the `clinical-trials-ai-mcp` command (stdio transport).
+
+## Examples
+
+Once configured, ask your assistant, for example:
+- "Use `search_trials` to …"
+- "Use `check_eligibility` to …"
+- "Use `get_trial_details` to …"
